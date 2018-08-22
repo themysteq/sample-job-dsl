@@ -1,13 +1,7 @@
-
-
-
-job("my-first-job-dsl") {
-
+job("jobs-provider-seed") {
     label('manager')
-    logRotator {
-        numToKeep 5
-    }
     steps {
-       shell('echo "Hello world"')
-    }
-}
+        dsl { external("**/myjobs.groovy")
+            ignoreExisting(false)
+            removeAction('DISABLE')
+            removeViewAction('IGNORE')}}}
