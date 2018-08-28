@@ -13,7 +13,7 @@ Just add this to your seed jobs to create "master" job for DSL jobs.
 
         steps {
             dsl {
-                external("**/*.groovy")
+                external("jobs/**/*.groovy")
                 ignoreExisting(false)
                 removeAction('DISABLE')
                 removeViewAction('IGNORE')
